@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import HeroSection from '../components/HeroSection.astro';
+import FilterSection from '../components/FilterSection.astro';
+import StorySection from '../components/StorySection.astro';
+import MethodSection from '../components/MethodSection.astro';
+import ProductsSection from '../components/ProductsSection.astro';
+import CasesSection from '../components/CasesSection.astro';
+import TestimonialsSection from '../components/TestimonialsSection.astro';
+import FormatSection from '../components/FormatSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import FooterSection from '../components/FooterSection.astro';
+---
+
+<BaseLayout
+  title="Светлана Лагутова — Архитектор жизни для предпринимателей и экспертов"
+  description="Премиальная работа с выгоранием, внутренней перестройкой и архитектурой жизни для предпринимателей, руководителей и топ-экспертов."
+>
+  <Nav />
+  <main>
+    <HeroSection />
+    <FilterSection />
+    <StorySection />
+    <MethodSection />
+    <ProductsSection />
+    <CasesSection />
+    <TestimonialsSection />
+    <FormatSection />
+    <ContactSection />
+  </main>
+  <FooterSection />
+</BaseLayout>

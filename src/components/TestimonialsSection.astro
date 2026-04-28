@@ -1,0 +1,58 @@
+---
+const testimonials = [
+  {
+    context: 'Участница клуба «Симфония», 3 месяца',
+    text: '«Я впервые за долгое время перестала жить из внутреннего напряжения. Появилась тишина, в которой не страшно оставаться.»'
+  },
+  {
+    context: 'Менторство, предпринимательница, консалтинг',
+    text: '«После работы не хочется бежать еще сильнее. Хочется жить точнее, спокойнее и дороже по ощущению.»'
+  },
+  {
+    context: 'Разовая сессия, executive-уровень',
+    text: '«Самое ценное — не совет, а состояние после: как будто внутри наконец стало меньше шума и больше формы.»'
+  },
+  {
+    context: 'Сопровождение «Архитектура пути»',
+    text: '«Это не вдохновение на час. Это тот редкий случай, когда меняется качество внутренней опоры.»'
+  }
+];
+---
+
+<section class="section" id="testimonials">
+  <div class="site-shell">
+    <div class="section-heading" data-reveal>
+      <p class="eyebrow">Отзывы</p>
+      <h2>Что говорят люди после работы</h2>
+      <p class="section-description">
+        Формат напоминает скриншоты переписок: коротко, живо и без лишнего глянца. Смысл всегда
+        один и тот же: человеку становится легче быть собой.
+      </p>
+    </div>
+
+    <div class="section-grid-2">
+      <div class="hero-secondary-image" data-reveal>
+        <img
+          src="/images/grand-piano-color.jpg"
+          alt="Светлана в черном платье у рояля"
+          loading="lazy"
+          decoding="async"
+          data-parallax
+        />
+      </div>
+
+      <div class="testimonial-carousel" aria-label="Отзывы клиентов">
+        {testimonials.map((item) => (
+          <article class="testimonial-card" data-reveal>
+            <div class="testimonial-card__meta">{item.context}</div>
+            <div class="screenshot">
+              <p>{item.text}</p>
+              <span class="line"></span>
+              <p class="testimonial-copy">Публикация с разрешения. Имена и детали при необходимости скрыты.</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

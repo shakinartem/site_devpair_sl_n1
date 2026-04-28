@@ -1,0 +1,58 @@
+---
+const steps = [
+  {
+    title: 'Целостность',
+    text: 'Тело, психика и бизнес-логистика — не три разных проблемы, а одна система, которая должна начать звучать согласованно.'
+  },
+  {
+    title: 'Тело первым',
+    text: 'Голова умеет рационализировать. Тело — нет. Поэтому мы начинаем с того, что сложнее всего подделать.'
+  },
+  {
+    title: 'Настройка, не ремонт',
+    text: 'Вы не сломаны. Вы расстроены. Моя задача — помочь найти точное звучание, а не вернуть вас к прежнему перегреву.'
+  },
+  {
+    title: 'Разговор на равных',
+    text: 'Без жалости, без давления, без патетики. С уважением, ясностью и точностью, которые ценят сильные люди.'
+  }
+];
+---
+
+<section class="section" id="method">
+  <div class="site-shell">
+    <div class="method-grid">
+      <div>
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Методология</p>
+          <h2>Четыре принципа, которые отличают эту работу</h2>
+          <p class="section-description">
+            В основе — executive coaching, внимательность к телу и архитектурное мышление.
+            Метод не обещает чудес. Он возвращает форму, в которой появляются и сила, и вкус к жизни.
+          </p>
+        </div>
+
+        <div class="method-steps">
+          {steps.map((step, index) => (
+            <article class="method-step" data-step={index + 1} data-reveal>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div class="method-visual" data-reveal>
+        <div class="hero-frame">
+          <img
+            src="/images/method-detail.jpg"
+            alt="Эмоциональный портрет Светланы с опущенным взглядом"
+            loading="lazy"
+            decoding="async"
+            data-parallax
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

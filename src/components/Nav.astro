@@ -1,0 +1,22 @@
+---
+const telegramUrl = import.meta.env.PUBLIC_TELEGRAM_URL ?? 'https://t.me/';
+---
+
+<header class="site-shell-wide">
+  <nav class="site-nav" aria-label="Основная навигация">
+    <div class="site-nav__inner">
+      <a class="brand-mark" href="/" aria-label="Светлана Лагутова">
+        <strong>Светлана Лагутова</strong>
+        <span>private life architecture</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">История</a>
+        <a href="#method">Метод</a>
+        <a href="#products">Форматы</a>
+        <a href="#cases">Кейсы</a>
+        <a href="#contact">Контакт</a>
+      </div>
+      <a class="nav-cta" href={telegramUrl} target="_blank" rel="noreferrer">Telegram</a>
+    </div>
+  </nav>
+</header>

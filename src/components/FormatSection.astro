@@ -1,0 +1,54 @@
+---
+const items = [
+  {
+    title: 'Онлайн без потери качества',
+    text: 'Все форматы проходят по видеосвязи. Вы можете находиться в любой точке мира, а работа останется такой же точной и собранной.'
+  },
+  {
+    title: 'Платформы и связь',
+    text: 'Zoom, Telegram и любой удобный мессенджер. Для сопровождения предусмотрена поддержка между сессиями в текстовом или аудио формате.'
+  },
+  {
+    title: 'Конфиденциальность',
+    text: 'Никакой информации о клиентах в публичном пространстве без явного согласия. Безопасность и приватность здесь не опция, а норма.'
+  },
+  {
+    title: 'Оплата и расписание',
+    text: 'Оплата возможна российскими и зарубежными картами. Сессии бронируются после оплаты в удобное для вас время.'
+  }
+];
+---
+
+<section class="section" id="format">
+  <div class="site-shell">
+    <div class="section-heading" data-reveal>
+      <p class="eyebrow">Технически</p>
+      <h2>Как это устроено</h2>
+      <p class="section-description">
+        Короткий, спокойный и практичный блок, который снимает бытовые вопросы без потери luxury
+        ощущения. Никакой суеты, только ясные условия.
+      </p>
+    </div>
+
+    <div class="format-grid">
+      <div class="format-list" data-reveal>
+        {items.map((item) => (
+          <article class="format-item">
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+
+      <div class="hero-secondary-image" data-reveal>
+        <img
+          src="/images/piano-bw.jpg"
+          alt="Светлана у рояля в черно-белом кадре"
+          loading="lazy"
+          decoding="async"
+          data-parallax
+        />
+      </div>
+    </div>
+  </div>
+</section>

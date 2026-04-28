@@ -1,0 +1,79 @@
+---
+const telegramUrl = import.meta.env.PUBLIC_TELEGRAM_URL ?? 'https://t.me/';
+const products = [
+  {
+    title: 'Сессия-знакомство',
+    eyebrow: 'Вход',
+    price: '45 минут · 3 900 ₽',
+    text: 'Для тех, кто понимает, что снаружи все работает, но внутри что-то звучит не так. За встречу мы находим точку входа, снимаем лишний шум и определяем, с чего действительно стоит начинать.',
+    bullets: ['Комфортное знакомство', 'Диагностика состояния', 'Карта следующего шага'],
+    action: 'Записаться'
+  },
+  {
+    title: 'Разовая сессия',
+    eyebrow: 'Точечная работа',
+    price: '60 минут · 7 500 ₽',
+    text: 'Для ясного запроса и глубокой работы в одной встрече. Это формат, где можно быстро увидеть, где застряло решение, и аккуратно развернуть его в сторону движения.',
+    bullets: ['Индивидуальные инструменты', 'Разбор сопротивлений', 'Практическая ясность'],
+    action: 'Выбрать формат'
+  },
+  {
+    title: 'Сопровождение «Архитектура пути»',
+    eyebrow: 'Флагман',
+    price: '1 месяц · 49 000 ₽',
+    text: 'Формат для тех, кто чувствует: проблема не в одном запросе. Вся конструкция жизни требует пересборки. Четыре глубокие встречи и поддержка между ними создают новую внутреннюю опору.',
+    bullets: ['4 сессии по 60 минут', 'Поддержка в мессенджере', 'Новая система движения'],
+    action: 'Записаться на диагностику',
+    featured: true
+  }
+];
+---
+
+<section class="section" id="products">
+  <div class="site-shell">
+    <div class="section-heading" data-reveal>
+      <p class="eyebrow">Форматы</p>
+      <h2>Три точки входа для разных уровней готовности</h2>
+      <p class="section-description">
+        Спокойная лестница выбора: от первой встречи до глубокой перестройки жизни. Самый сильный
+        формат выделен визуально и смыслово.
+      </p>
+    </div>
+
+    <div class="format-grid">
+      <div class="products-grid" data-reveal>
+        {products.map((product) => (
+          <article class:list={['product-card', product.featured ? 'product-card--featured' : '']} >
+            <span class="label-chip">{product.eyebrow}</span>
+            <h3>{product.title}</h3>
+            <div class="product-price">{product.price}</div>
+            <p>{product.text}</p>
+            <ul class="luxury-list">
+              {product.bullets.map((bullet) => <li>{bullet}</li>)}
+            </ul>
+            <div class="cta-row">
+              <a class={product.featured ? 'button button--solid' : 'button button--ghost'} href="#contact">
+                {product.action}
+              </a>
+              <a class="button button--ghost" href={telegramUrl} target="_blank" rel="noreferrer">
+                Telegram
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="product-visual" data-reveal>
+        <div class="hero-frame">
+          <img
+            src="/images/elegance-close.jpg"
+            alt="Деталь образа Светланы"
+            loading="lazy"
+            decoding="async"
+            data-parallax
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

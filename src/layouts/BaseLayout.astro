@@ -1,0 +1,98 @@
+---
+import '../styles/global.css';
+
+const {
+  title,
+  description,
+  canonical,
+  noindex = false
+} = Astro.props as {
+  title: string;
+  description: string;
+  canonical?: string;
+  noindex?: boolean;
+};
+
+const siteUrl = Astro.site?.toString() ?? 'https://svetlana-lagutova.pages.dev';
+const pageUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString();
+const heroImage = new URL('/images/hero-main-bw.jpg', siteUrl).toString();
+const telegramUrl = import.meta.env.PUBLIC_TELEGRAM_URL ?? 'https://t.me/';
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Светлана Лагутова',
+  jobTitle: 'Архитектор жизни для предпринимателей и экспертов',
+  description,
+  url: pageUrl,
+  image: heroImage
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Светлана Лагутова',
+  url: siteUrl,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${siteUrl}/?s={search_term_string}`,
+    'query-input': 'required name=search_term_string'
+  }
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Executive coaching and life architecture',
+  provider: {
+    '@type': 'Person',
+    name: 'Светлана Лагутова'
+  },
+  areaServed: 'Worldwide',
+  serviceType: 'Executive coaching',
+  url: pageUrl,
+  sameAs: [telegramUrl]
+};
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F7F1E8" />
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+    <link rel="canonical" href={pageUrl} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={heroImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={heroImage} />
+    <title>{title}</title>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)}></script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
+  </head>
+  <body>
+    <div class="grain-overlay" aria-hidden="true"></div>
+    <div class="luxury-loader" data-loader aria-hidden="true">
+      <div class="luxury-loader__mark">SL</div>
+    </div>
+    <div class="luxury-cursor" data-luxury-cursor aria-hidden="true"></div>
+    <slot />
+    <script>
+      import '../scripts/site.ts';
+    </script>
+  </body>
+</html>

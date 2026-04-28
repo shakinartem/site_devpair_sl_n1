@@ -1,0 +1,58 @@
+---
+const telegramUrl = import.meta.env.PUBLIC_TELEGRAM_URL ?? 'https://t.me/';
+const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT ?? 'https://formspree.io/f/YOUR_FORM_ID';
+---
+
+<section class="section" id="contact">
+  <div class="site-shell">
+    <div class="section-heading" data-reveal>
+      <p class="eyebrow">Контакт</p>
+      <h2>Напишите Светлане</h2>
+      <p class="section-description">
+        Первый шаг — не покупка. Это разговор. Бесплатная диагностическая встреча нужна, чтобы
+        спокойно понять, подходим ли мы друг другу и что сейчас действительно важно.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <form class="contact-form" action={formspreeEndpoint} method="post" data-reveal>
+        <div class="field-group">
+          <label for="name">Имя</label>
+          <input id="name" name="name" type="text" placeholder="Ваше имя" required />
+        </div>
+        <div class="field-group">
+          <label for="contact">Telegram или WhatsApp</label>
+          <input id="contact" name="contact" type="text" placeholder="@username или номер" required />
+        </div>
+        <div class="field-group">
+          <label for="message">Что сейчас звучит не так?</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Опишите в двух предложениях текущую точку"
+            required
+          ></textarea>
+        </div>
+        <button class="button button--solid" type="submit">Написать Светлане</button>
+        <p class="section-description">
+          После заявки я свяжусь с вами в течение 24 часов. Диагностическая встреча длится 30 минут
+          и проходит бесплатно.
+        </p>
+      </form>
+
+      <div class="luxury-card" data-reveal>
+        <span class="label-chip">Альтернатива</span>
+        <h3 class="luxury-card__title">Или напишите напрямую в Telegram</h3>
+        <p>
+          Для части людей прямой канал связи ощущается естественнее, чем форма. Это нормальный путь
+          входа в private consultation без лишнего трения.
+        </p>
+        <div class="cta-row">
+          <a class="button button--solid" href={telegramUrl} target="_blank" rel="noreferrer">Открыть Telegram</a>
+          <a class="button button--ghost" href="#home">Наверх</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

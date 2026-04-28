@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import FooterSection from '../components/FooterSection.astro';
+---
+
+<BaseLayout
+  title="Спасибо — Светлана Лагутова"
+  description="Спасибо за заявку."
+  noindex={true}
+>
+  <Nav />
+  <main class="legal-page">
+    <div class="site-shell legal-card">
+      <p class="eyebrow">Спасибо</p>
+      <h1 class="page-title">Заявка принята</h1>
+      <p>
+        Спасибо за обращение. Я свяжусь с вами в течение 24 часов, чтобы согласовать диагностическую
+        встречу и понять, какой формат будет наиболее точным.
+      </p>
+      <div class="cta-row">
+        <a class="button button--solid" href="/">Вернуться на главную</a>
+        <a class="button button--ghost" href="https://t.me/" target="_blank" rel="noreferrer">Telegram</a>
+      </div>
+    </div>
+  </main>
+  <FooterSection />
+</BaseLayout>
