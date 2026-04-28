@@ -27,13 +27,13 @@ const testimonials = [
       <p class="eyebrow">Отзывы</p>
       <h2>Что говорят люди после работы</h2>
       <p class="section-description">
-        Формат напоминает скриншоты переписок: коротко, живо и без лишнего глянца. Смысл всегда
-        один и тот же: человеку становится легче быть собой.
+        Формат подан как аккуратная подборка сообщений: сначала контекст, потом голос человека.
+        Так отзывы читаются быстрее и выглядят более собранно.
       </p>
     </div>
 
-    <div class="section-grid-2">
-      <div class="hero-secondary-image" data-reveal>
+    <div class="testimonials-layout">
+      <div class="testimonial-visual" data-reveal>
         <img
           src={publicImage('grand-piano-color.jpg')}
           alt="Светлана в черном платье у рояля"
@@ -43,7 +43,7 @@ const testimonials = [
         />
       </div>
 
-      <div class="testimonial-carousel" aria-label="Отзывы клиентов">
+      <div class="testimonial-grid" aria-label="Отзывы клиентов">
         {testimonials.map((item) => (
           <article class="testimonial-card" data-reveal>
             <div class="testimonial-card__meta">{item.context}</div>

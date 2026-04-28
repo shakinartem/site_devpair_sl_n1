@@ -42,7 +42,7 @@ const products = [
       </p>
     </div>
 
-    <div class="format-grid">
+    <div class="products-layout">
       <div class="products-grid" data-reveal>
         {products.map((product) => (
           <article class:list={['product-card', product.featured ? 'product-card--featured' : '']} >
@@ -65,7 +65,7 @@ const products = [
         ))}
       </div>
 
-      <div class="product-visual" data-reveal>
+      <div class="product-visual product-visual--wide" data-reveal>
         <div class="hero-frame">
           <img
             src={publicImage('elegance-close.jpg')}

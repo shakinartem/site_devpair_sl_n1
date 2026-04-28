@@ -21,7 +21,7 @@ const updateParallax = () => {
   parallaxEls.forEach((element) => {
     const rect = element.getBoundingClientRect();
     const offset = (rect.top + rect.height / 2 - viewportCenter) / window.innerHeight;
-    element.style.transform = `translate3d(0, ${offset * -18}px, 0) scale(1.02)`;
+    element.style.transform = `translate3d(0, ${offset * -10}px, 0) scale(1.01)`;
   });
 };
 
@@ -75,9 +75,9 @@ const initHero = () => {
   if (!heroEls.length) return;
 
   gsap.from(heroEls, {
-    y: 24,
+    y: 18,
     opacity: 0,
-    duration: 1.15,
+    duration: 0.82,
     delay: 0.15,
     stagger: 0.08,
     ease: 'power3.out'
