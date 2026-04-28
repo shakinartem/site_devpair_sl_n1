@@ -1,4 +1,5 @@
 ---
+import { publicImage } from '../lib/paths';
 ---
 
 <section class="hero section" id="home">
@@ -36,7 +37,7 @@
     <div class="hero-visual" data-reveal data-parallax>
       <div class="hero-frame">
         <img
-          src="/images/hero-main-bw.jpg"
+          src={publicImage('hero-main-bw.jpg')}
           alt="Светлана Лагутова в черно-белом образе на улице"
           loading="eager"
           fetchpriority="high"

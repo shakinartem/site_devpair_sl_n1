@@ -1,4 +1,6 @@
 ---
+import { publicImage } from '../lib/paths';
+
 const steps = [
   {
     title: 'Целостность',
@@ -45,7 +47,7 @@ const steps = [
       <div class="method-visual" data-reveal>
         <div class="hero-frame">
           <img
-            src="/images/method-detail.jpg"
+            src={publicImage('method-detail.jpg')}
             alt="Эмоциональный портрет Светланы с опущенным взглядом"
             loading="lazy"
             decoding="async"

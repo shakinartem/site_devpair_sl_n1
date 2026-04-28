@@ -15,7 +15,7 @@ const {
 
 const siteUrl = Astro.site?.toString() ?? 'https://svetlana-lagutova.pages.dev';
 const pageUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString();
-const heroImage = new URL('/images/hero-main-bw.jpg', siteUrl).toString();
+const heroImage = new URL('images/hero-main-bw.jpg', siteUrl).toString();
 const telegramUrl = import.meta.env.PUBLIC_TELEGRAM_URL ?? 'https://t.me/';
 
 const personSchema = {

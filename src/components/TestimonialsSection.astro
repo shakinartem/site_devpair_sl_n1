@@ -1,4 +1,6 @@
 ---
+import { publicImage } from '../lib/paths';
+
 const testimonials = [
   {
     context: 'Участница клуба «Симфония», 3 месяца',
@@ -33,7 +35,7 @@ const testimonials = [
     <div class="section-grid-2">
       <div class="hero-secondary-image" data-reveal>
         <img
-          src="/images/grand-piano-color.jpg"
+          src={publicImage('grand-piano-color.jpg')}
           alt="Светлана в черном платье у рояля"
           loading="lazy"
           decoding="async"

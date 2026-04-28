@@ -1,4 +1,6 @@
 ---
+import { publicImage } from '../lib/paths';
+
 const telegramUrl = import.meta.env.PUBLIC_TELEGRAM_URL ?? 'https://t.me/';
 const products = [
   {
@@ -66,7 +68,7 @@ const products = [
       <div class="product-visual" data-reveal>
         <div class="hero-frame">
           <img
-            src="/images/elegance-close.jpg"
+            src={publicImage('elegance-close.jpg')}
             alt="Деталь образа Светланы"
             loading="lazy"
             decoding="async"

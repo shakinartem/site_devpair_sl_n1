@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import FooterSection from '../components/FooterSection.astro';
+import { sitePath } from '../lib/paths';
 ---
 
 <BaseLayout
@@ -19,7 +20,7 @@ import FooterSection from '../components/FooterSection.astro';
         остается доступным.
       </p>
       <div class="cta-row">
-        <a class="button button--solid" href="/">На главную</a>
+        <a class="button button--solid" href={sitePath()}>На главную</a>
         <a class="button button--ghost" href="#contact">Написать</a>
       </div>
     </div>

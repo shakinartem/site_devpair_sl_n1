@@ -1,4 +1,5 @@
 ---
+import { sitePath } from '../lib/paths';
 const telegramUrl = import.meta.env.PUBLIC_TELEGRAM_URL ?? 'https://t.me/';
 const instagramUrl = import.meta.env.PUBLIC_INSTAGRAM_URL ?? 'https://instagram.com/';
 ---
@@ -13,9 +14,9 @@ const instagramUrl = import.meta.env.PUBLIC_INSTAGRAM_URL ?? 'https://instagram.
       <div class="footer-links">
         <a href={telegramUrl} target="_blank" rel="noreferrer">Telegram</a>
         <a href={instagramUrl} target="_blank" rel="noreferrer">Instagram</a>
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/public-offer">Public Offer</a>
-        <a href="/consent">Consent</a>
+        <a href={sitePath('privacy-policy')}>Privacy Policy</a>
+        <a href={sitePath('public-offer')}>Public Offer</a>
+        <a href={sitePath('consent')}>Consent</a>
       </div>
     </div>
     <div class="site-footer__row">

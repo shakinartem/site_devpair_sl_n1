@@ -1,4 +1,6 @@
 ---
+import { publicImage } from '../lib/paths';
+
 const items = [
   {
     title: 'Онлайн без потери качества',
@@ -42,7 +44,7 @@ const items = [
 
       <div class="hero-secondary-image" data-reveal>
         <img
-          src="/images/piano-bw.jpg"
+          src={publicImage('piano-bw.jpg')}
           alt="Светлана у рояля в черно-белом кадре"
           loading="lazy"
           decoding="async"
