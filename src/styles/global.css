@@ -126,7 +126,7 @@ body[data-tone='charcoal'] .contact-form .field-group textarea::placeholder {
 
 body[data-tone='charcoal'] .contact-form .button--solid {
   background: #f7efe7;
-  color: #1d1815;
+  color: #000000;
 }
 
 body[data-tone='charcoal'] .contact-form .button--solid:hover,
@@ -145,12 +145,12 @@ body[data-tone='charcoal'] .contact-form .consent-check a {
 
 body[data-tone='charcoal'] .contact-card .button--solid {
   background: #f6efe7;
-  color: #1d1815;
+  color: #000000;
 }
 
 body[data-tone='charcoal'] .contact-card .button--ghost {
-  background: rgba(255, 255, 255, 0.08);
-  color: #f6efe7;
+  background: #f6efe7;
+  color: #000000;
   border-color: rgba(255, 255, 255, 0.16);
 }
 
