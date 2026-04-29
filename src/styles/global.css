@@ -105,6 +105,55 @@ body[data-tone='charcoal'] .luxury-card {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
+body[data-tone='charcoal'] .contact-form .field-group label,
+body[data-tone='charcoal'] .contact-form .consent-check span,
+body[data-tone='charcoal'] .contact-form .section-description,
+body[data-tone='charcoal'] .contact-form .field-group input,
+body[data-tone='charcoal'] .contact-form .field-group textarea {
+  color: #f6efe7;
+}
+
+body[data-tone='charcoal'] .contact-form .field-group input,
+body[data-tone='charcoal'] .contact-form .field-group textarea {
+  background: rgba(255, 248, 240, 0.1);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+body[data-tone='charcoal'] .contact-form .field-group input::placeholder,
+body[data-tone='charcoal'] .contact-form .field-group textarea::placeholder {
+  color: rgba(246, 239, 231, 0.66);
+}
+
+body[data-tone='charcoal'] .contact-form .button--solid {
+  background: #f7efe7;
+  color: #1d1815;
+}
+
+body[data-tone='charcoal'] .contact-form .button--solid:hover,
+body[data-tone='charcoal'] .contact-form .button--solid:focus-visible {
+  background: #ffffff;
+}
+
+body[data-tone='charcoal'] .contact-form .consent-check {
+  background: rgba(255, 248, 240, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+body[data-tone='charcoal'] .contact-form .consent-check a {
+  color: #ffffff;
+}
+
+body[data-tone='charcoal'] .contact-card .button--solid {
+  background: #f6efe7;
+  color: #1d1815;
+}
+
+body[data-tone='charcoal'] .contact-card .button--ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f6efe7;
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
 body[data-tone='charcoal'] .case-card p,
 body[data-tone='charcoal'] .contact-card p,
 body[data-tone='charcoal'] .testimonial-card blockquote,
@@ -262,6 +311,8 @@ body[data-scrolled='true'] .site-nav {
   display: flex;
   align-items: center;
   gap: 18px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .nav-links {
@@ -315,6 +366,8 @@ body[data-scrolled='true'] .site-nav {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .nav-link-ghost,
