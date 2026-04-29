@@ -2,41 +2,50 @@
 import { publicImage } from '../lib/paths';
 ---
 
-<section class="section" id="about">
+<section class="section section--story" id="about" data-tone="sand">
   <div class="site-shell">
-    <div class="section-heading" data-reveal>
-      <p class="eyebrow">Личная история</p>
-      <h2>Я знаю это изнутри</h2>
+    <div class="section-heading section-heading--split" data-reveal>
+      <div>
+        <p class="eyebrow">Личная история</p>
+        <h2>Я знаю это изнутри</h2>
+      </div>
       <p class="section-description">
-        Эта работа родилась не из теории. Она выросла из собственной точки, где статус перестал
-        защищать, а тело и психика впервые потребовали правды.
+        Эта работа родилась не из теории. Она выросла из точки, где статус перестаёт защищать, а тело и психика впервые
+        просят правды.
       </p>
     </div>
 
     <div class="story-grid">
       <div class="story-copy" data-reveal>
         <p class="story-quote">
-          13 лет карьеры, которой можно было гордиться. А потом — момент, когда у меня было всё,
-          кроме ощущения, что это по-настоящему моя жизнь.
+          Тринадцать лет карьеры, которой можно было гордиться. А потом наступил момент, когда у меня было всё, кроме
+          ощущения, что это действительно моя жизнь.
+        </p>
+        <figure class="story-inline-image">
+          <img
+            src={publicImage('elegance-close.jpg')}
+            alt="Деталь образа Светланы"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>Closer to the work, closer to the text</figcaption>
+        </figure>
+        <p>
+          Я ушла из должности, которую строила полтора десятилетия. Первый год после этого был самым некомфортным:
+          без маршрута, без привычной роли, без ответа на вопрос, кто я теперь.
         </p>
         <p>
-          Я ушла из должности, которую строила полтора десятилетия. Первый год после этого был
-          самым некомфортным в моей жизни: без маршрута, без привычного статуса, без ответа на
-          вопрос, кто я теперь.
+          Именно там стало ясно: должность, сцена и высокая планка могут быть не только достижением, но и укрытием.
+          Когда внешняя конструкция снимается, часто впервые слышно самое важное.
         </p>
         <p>
-          И именно там стало ясно: должность, сцена, роль и высокая планка могут быть не только
-          достижением, но и укрытием. Когда внешняя конструкция снята, часто впервые становится
-          слышно самое важное.
-        </p>
-        <p>
-          Сейчас я работаю с предпринимателями, руководителями и экспертами, которые оказались в
-          похожей точке. Я не объясняю им жизнь со стороны. Я знаю, как она звучит изнутри.
+          Сейчас я работаю с предпринимателями, руководителями и экспертами, которые оказались в похожей точке. Я не
+          объясняю им жизнь со стороны. Я знаю, как она звучит изнутри.
         </p>
       </div>
 
-      <aside class="aside-stack story-visual" data-reveal>
-        <div class="hero-secondary-image">
+      <aside class="story-visual" data-reveal>
+        <div class="hero-secondary-image hero-secondary-image--tall">
           <img
             src={publicImage('story-portrait.jpg')}
             alt="Светлана Лагутова в кресле, глубокий профиль"
@@ -60,6 +69,11 @@ import { publicImage } from '../lib/paths';
               loading="lazy"
               decoding="async"
             />
+          </div>
+        </div>
+        <div class="story-bottom-row">
+          <div class="hero-secondary-image">
+            <img src={publicImage('method-detail.jpg')} alt="Дополнительный кадр" loading="lazy" decoding="async" />
           </div>
         </div>
       </aside>

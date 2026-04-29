@@ -5,19 +5,15 @@ import FooterSection from '../components/FooterSection.astro';
 import { sitePath } from '../lib/paths';
 ---
 
-<BaseLayout
-  title="Спасибо — Светлана Лагутова"
-  description="Спасибо за заявку."
-  noindex={true}
->
+<BaseLayout title="Спасибо — Светлана Лагутова" description="Заявка принята." noindex={true}>
   <Nav />
   <main class="legal-page">
     <div class="site-shell legal-card">
       <p class="eyebrow">Спасибо</p>
       <h1 class="page-title">Заявка принята</h1>
       <p>
-        Спасибо за обращение. Я свяжусь с вами в течение 24 часов, чтобы согласовать диагностическую
-        встречу и понять, какой формат будет наиболее точным.
+        Спасибо за обращение. Я свяжусь с вами в течение 24 часов, чтобы согласовать диагностическую встречу и
+        понять, какой формат будет наиболее точным.
       </p>
       <div class="cta-row">
         <a class="button button--solid" href={sitePath()}>Вернуться на главную</a>

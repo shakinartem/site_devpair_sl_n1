@@ -5,23 +5,15 @@ import FooterSection from '../components/FooterSection.astro';
 import { sitePath } from '../lib/paths';
 ---
 
-<BaseLayout
-  title="404 — Светлана Лагутова"
-  description="Страница не найдена."
-  noindex={true}
->
+<BaseLayout title="Страница не найдена — Светлана Лагутова" description="Запрашиваемая страница не найдена." noindex={true}>
   <Nav />
   <main class="legal-page">
     <div class="site-shell legal-card">
       <p class="eyebrow">404</p>
-      <h1 class="page-title">Perhaps this page was never meant to be found.</h1>
-      <p>
-        Вероятно, ссылка устарела или адрес был введен с ошибкой. Но главное пространство сайта
-        остается доступным.
-      </p>
+      <h1 class="page-title">Страница не найдена</h1>
+      <p>Похоже, ссылка устарела или адрес был введён с ошибкой. Вернитесь на главную и продолжите знакомство оттуда.</p>
       <div class="cta-row">
         <a class="button button--solid" href={sitePath()}>На главную</a>
-        <a class="button button--ghost" href="#contact">Написать</a>
       </div>
     </div>
   </main>

@@ -1,12 +1,13 @@
 ---
 import { sitePath } from '../lib/paths';
+
 const telegramUrl = import.meta.env.PUBLIC_TELEGRAM_URL ?? 'https://t.me/';
 const instagramUrl = import.meta.env.PUBLIC_INSTAGRAM_URL ?? 'https://instagram.com/';
 ---
 
 <footer class="site-footer">
   <div class="site-shell site-footer__inner">
-    <div class="site-footer__row">
+    <div class="site-footer__top">
       <div class="brand-mark">
         <strong>Светлана Лагутова</strong>
         <span>quiet luxury personal brand</span>
@@ -19,12 +20,16 @@ const instagramUrl = import.meta.env.PUBLIC_INSTAGRAM_URL ?? 'https://instagram.
         <a href={sitePath('consent')}>Consent</a>
       </div>
     </div>
+
     <div class="site-footer__row">
       <p>© Светлана Лагутова, 2025</p>
-      <p>Деятельность не является медицинской и психотерапевтической практикой.</p>
+      <p>Деятельность не является медицинской или психотерапевтической практикой.</p>
     </div>
-    <div class="site-footer__row">
-      <p>Created by DevPair — <a href="https://devpair.ru/" target="_blank" rel="noreferrer">devpair.ru</a></p>
+
+    <div class="site-footer__row site-footer__row--last">
+      <p>
+        Created by DevPair — <a href="https://devpair.ru/" target="_blank" rel="noreferrer">devpair.ru</a>
+      </p>
       <p>Архитектура, дизайн и SEO собраны как private-level life architecture funnel.</p>
     </div>
   </div>

@@ -4,14 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        beige: '#E8DCCB',
-        champagne: '#D6BFA2',
-        espresso: '#201A17',
-        ivory: '#FAF7F2',
-        gold: '#BFA07A'
+        ivory: '#f4ede3',
+        sand: '#e4d4be',
+        taupe: '#c6b29a',
+        graphite: '#1f1a17',
+        charcoal: '#2b2420',
+        bronze: '#b89466'
       },
       boxShadow: {
-        luxury: '0 24px 80px rgba(32, 26, 23, 0.12)'
+        luxury: '0 28px 90px rgba(31, 26, 23, 0.11)'
       }
     }
   },

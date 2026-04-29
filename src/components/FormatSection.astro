@@ -4,7 +4,7 @@ import { publicImage } from '../lib/paths';
 const items = [
   {
     title: 'Онлайн без потери качества',
-    text: 'Все форматы проходят по видеосвязи. Вы можете находиться в любой точке мира, а работа останется такой же точной и собранной.'
+    text: 'Все форматы проходят по видеосвязи. Вы можете находиться в любой точке мира, а работа останется такой же собранной и точной.'
   },
   {
     title: 'Платформы и связь',
@@ -21,14 +21,14 @@ const items = [
 ];
 ---
 
-<section class="section" id="format">
+<section class="section section--format" id="format" data-tone="light">
   <div class="site-shell">
     <div class="section-heading" data-reveal>
       <p class="eyebrow">Технически</p>
       <h2>Как это устроено</h2>
       <p class="section-description">
-        Короткий, спокойный и практичный блок, который снимает бытовые вопросы без потери luxury
-        ощущения. Никакой суеты, только ясные условия.
+        Короткий, спокойный и практичный блок, который снимает бытовые вопросы без потери luxury-ощущения. Никакой
+        суеты, только ясные условия.
       </p>
     </div>
 
@@ -42,13 +42,12 @@ const items = [
         ))}
       </div>
 
-      <div class="format-visual hero-secondary-image" data-reveal>
+      <div class="format-visual format-visual--compact hero-secondary-image hero-secondary-image--compact" data-reveal data-parallax>
         <img
           src={publicImage('piano-bw.jpg')}
           alt="Светлана у рояля в черно-белом кадре"
           loading="lazy"
           decoding="async"
-          data-parallax
         />
       </div>
     </div>

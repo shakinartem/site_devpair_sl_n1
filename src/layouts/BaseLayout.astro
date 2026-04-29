@@ -13,7 +13,7 @@ const {
   noindex?: boolean;
 };
 
-const siteUrl = Astro.site?.toString() ?? 'https://svetlana-lagutova.pages.dev';
+const siteUrl = Astro.site?.toString() ?? 'https://shakinartem.github.io/site_devpair_sl_n1/';
 const pageUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString();
 const heroImage = new URL('images/hero-main-bw.jpg', siteUrl).toString();
 const telegramUrl = import.meta.env.PUBLIC_TELEGRAM_URL ?? 'https://t.me/';
@@ -60,14 +60,14 @@ const serviceSchema = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#F7F1E8" />
+    <meta name="theme-color" content="#f4ede3" />
     <meta name="description" content={description} />
     <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
     <link rel="canonical" href={pageUrl} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <meta property="og:type" content="website" />
@@ -84,7 +84,7 @@ const serviceSchema = {
     <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
     <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   </head>
-  <body>
+  <body class="site-body">
     <div class="grain-overlay" aria-hidden="true"></div>
     <div class="luxury-loader" data-loader aria-hidden="true">
       <div class="luxury-loader__mark">SL</div>

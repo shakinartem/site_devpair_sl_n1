@@ -1,23 +1,36 @@
 ---
 import { sitePath } from '../lib/paths';
+
 const telegramUrl = import.meta.env.PUBLIC_TELEGRAM_URL ?? 'https://t.me/';
 ---
 
-<header class="site-shell-wide">
-  <nav class="site-nav" aria-label="Основная навигация">
+<header class="site-shell-wide site-header" data-nav-shell>
+  <nav class="site-nav" data-nav aria-label="Основная навигация">
     <div class="site-nav__inner">
       <a class="brand-mark" href={sitePath()} aria-label="Светлана Лагутова">
         <strong>Светлана Лагутова</strong>
         <span>private life architecture</span>
       </a>
-      <div class="nav-links">
-        <a href="#about">История</a>
-        <a href="#method">Метод</a>
-        <a href="#products">Форматы</a>
-        <a href="#cases">Кейсы</a>
-        <a href="#contact">Контакт</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" data-nav-toggle>
+        <span>Menu</span>
+        <span class="nav-toggle__line" aria-hidden="true"></span>
+      </button>
+
+      <div class="nav-panel" id="nav-panel" data-nav-panel>
+        <div class="nav-links">
+          <a href="#about">История</a>
+          <a href="#method">Метод</a>
+          <a href="#products">Форматы</a>
+          <a href="#cases">Кейсы</a>
+          <a href="#testimonials">Отзывы</a>
+          <a href="#contact">Контакт</a>
+        </div>
+        <div class="nav-actions">
+          <a class="nav-link-ghost" href={telegramUrl} target="_blank" rel="noreferrer">Telegram</a>
+          <a class="nav-cta" href="#contact">Start a conversation</a>
+        </div>
       </div>
-      <a class="nav-cta" href={telegramUrl} target="_blank" rel="noreferrer">Telegram</a>
     </div>
   </nav>
 </header>

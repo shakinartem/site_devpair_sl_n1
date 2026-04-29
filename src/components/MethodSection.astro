@@ -4,7 +4,7 @@ import { publicImage } from '../lib/paths';
 const steps = [
   {
     title: 'Целостность',
-    text: 'Тело, психика и бизнес-логистика — не три разных проблемы, а одна система, которая должна начать звучать согласованно.'
+    text: 'Тело, психика и бизнес-логика не три разные проблемы, а одна система, которая должна начать звучать согласованно.'
   },
   {
     title: 'Тело первым',
@@ -12,25 +12,25 @@ const steps = [
   },
   {
     title: 'Настройка, не ремонт',
-    text: 'Вы не сломаны. Вы расстроены. Моя задача — помочь найти точное звучание, а не вернуть вас к прежнему перегреву.'
+    text: 'Вы не сломаны. Вы расстроены. Моя задача — помочь найти точное звучание, а не вернуть вас в прежний перегрев.'
   },
   {
     title: 'Разговор на равных',
-    text: 'Без жалости, без давления, без патетики. С уважением, ясностью и точностью, которые ценят сильные люди.'
+    text: 'Без жалости, без давления и без патетики. С уважением, ясностью и точностью, которые ценят сильные люди.'
   }
 ];
 ---
 
-<section class="section" id="method">
+<section class="section section--method" id="method" data-tone="light">
   <div class="site-shell">
     <div class="method-grid">
-      <div>
+      <div class="method-copy">
         <div class="section-heading" data-reveal>
           <p class="eyebrow">Методология</p>
           <h2>Четыре принципа, которые отличают эту работу</h2>
           <p class="section-description">
-            В основе — executive coaching, внимательность к телу и архитектурное мышление.
-            Метод не обещает чудес. Он возвращает форму, в которой появляются и сила, и вкус к жизни.
+            В основе executive coaching, внимание к телу и архитектурное мышление. Метод не обещает чудес. Он
+            возвращает форму, в которой снова появляются и сила, и вкус к жизни.
           </p>
         </div>
 
@@ -45,14 +45,18 @@ const steps = [
       </div>
 
       <div class="method-visual" data-reveal>
-        <div class="hero-frame">
+        <div class="hero-frame hero-frame--portrait">
           <img
             src={publicImage('method-detail.jpg')}
-            alt="Эмоциональный портрет Светланы с опущенным взглядом"
+            alt="Эмоциональный портрет Светланы"
             loading="lazy"
             decoding="async"
             data-parallax
           />
+        </div>
+        <div class="panel-caption">
+          <span>Working principle</span>
+          <p>Clarity first. Pressure never.</p>
         </div>
       </div>
     </div>

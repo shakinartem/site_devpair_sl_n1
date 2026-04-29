@@ -12,45 +12,51 @@ const testimonials = [
   },
   {
     context: 'Разовая сессия, executive-уровень',
-    text: '«Самое ценное — не совет, а состояние после: как будто внутри наконец стало меньше шума и больше формы.»'
+    text: '«Самое ценное - не совет, а состояние после. Как будто внутри наконец стало меньше шума и больше формы.»'
   },
   {
     context: 'Сопровождение «Архитектура пути»',
-    text: '«Это не вдохновение на час. Это тот редкий случай, когда меняется качество внутренней опоры.»'
+    text: '«Это не вдохновение на час. Это редкий случай, когда меняется качество внутренней опоры.»'
   }
 ];
 ---
 
-<section class="section" id="testimonials">
+<section class="section section--testimonials" id="testimonials" data-tone="ivory">
   <div class="site-shell">
-    <div class="section-heading" data-reveal>
-      <p class="eyebrow">Отзывы</p>
-      <h2>Что говорят люди после работы</h2>
+    <div class="section-heading section-heading--split" data-reveal>
+      <div>
+        <p class="eyebrow">Отзывы</p>
+        <h2>Что говорят люди после работы, когда шум отступает и появляется форма</h2>
+      </div>
       <p class="section-description">
-        Формат подан как аккуратная подборка сообщений: сначала контекст, потом голос человека.
-        Так отзывы читаются быстрее и выглядят более собранно.
+        Вместо обычных карточек здесь editorial-стена отзывов: контекст, голос клиента и ощущение результата. Блок
+        можно читать как кейсы доверия.
       </p>
     </div>
 
     <div class="testimonials-layout">
-      <div class="testimonial-visual" data-reveal>
+      <div class="testimonial-visual" data-reveal data-tilt>
         <img
           src={publicImage('grand-piano-color.jpg')}
-          alt="Светлана в черном платье у рояля"
+          alt="Светлана в чёрном платье у рояля"
           loading="lazy"
           decoding="async"
           data-parallax
         />
+        <div class="testimonial-visual__note">
+          <span>Client voice</span>
+          <strong>calm, precise, premium</strong>
+        </div>
       </div>
 
-      <div class="testimonial-grid" aria-label="Отзывы клиентов">
-        {testimonials.map((item) => (
-          <article class="testimonial-card" data-reveal>
+      <div class="testimonial-wall" data-review-wall>
+        {testimonials.map((item, index) => (
+          <article class="testimonial-card" data-reveal data-tilt data-review-card data-card-index={index}>
             <div class="testimonial-card__meta">{item.context}</div>
-            <div class="screenshot">
-              <p>{item.text}</p>
-              <span class="line"></span>
-              <p class="testimonial-copy">Публикация с разрешения. Имена и детали при необходимости скрыты.</p>
+            <blockquote>{item.text}</blockquote>
+            <div class="testimonial-card__foot">
+              <span class="testimonial-card__index">0{index + 1}</span>
+              <span>Verified client feedback</span>
             </div>
           </article>
         ))}

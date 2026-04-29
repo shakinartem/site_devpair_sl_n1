@@ -2,12 +2,13 @@
 import { publicImage } from '../lib/paths';
 
 const telegramUrl = import.meta.env.PUBLIC_TELEGRAM_URL ?? 'https://t.me/';
+
 const products = [
   {
     title: 'Сессия-знакомство',
     eyebrow: 'Вход',
     price: '45 минут · 3 900 ₽',
-    text: 'Для тех, кто понимает, что снаружи все работает, но внутри что-то звучит не так. За встречу мы находим точку входа, снимаем лишний шум и определяем, с чего действительно стоит начинать.',
+    text: 'Для тех, кто понимает: снаружи всё работает, но внутри что-то звучит не так. За встречу мы находим точку входа, снимаем лишний шум и определяем, с чего действительно стоит начинать.',
     bullets: ['Комфортное знакомство', 'Диагностика состояния', 'Карта следующего шага'],
     action: 'Записаться'
   },
@@ -31,21 +32,21 @@ const products = [
 ];
 ---
 
-<section class="section" id="products">
+<section class="section section--products" id="products" data-tone="sand">
   <div class="site-shell">
     <div class="section-heading" data-reveal>
       <p class="eyebrow">Форматы</p>
-      <h2>Три точки входа для разных уровней готовности</h2>
+      <h2>Три точки входа для разного уровня готовности</h2>
       <p class="section-description">
-        Спокойная лестница выбора: от первой встречи до глубокой перестройки жизни. Самый сильный
-        формат выделен визуально и смыслово.
+        Спокойная лестница выбора: от первой встречи до глубокой перестройки жизни. Самый сильный формат выделен
+        визуально и смыслово.
       </p>
     </div>
 
     <div class="products-layout">
       <div class="products-grid" data-reveal>
         {products.map((product) => (
-          <article class:list={['product-card', product.featured ? 'product-card--featured' : '']} >
+          <article class:list={['product-card', product.featured ? 'product-card--featured' : '']}>
             <span class="label-chip">{product.eyebrow}</span>
             <h3>{product.title}</h3>
             <div class="product-price">{product.price}</div>
@@ -66,7 +67,7 @@ const products = [
       </div>
 
       <div class="product-visual product-visual--wide" data-reveal>
-        <div class="hero-frame">
+        <div class="hero-frame hero-frame--wide">
           <img
             src={publicImage('elegance-close.jpg')}
             alt="Деталь образа Светланы"

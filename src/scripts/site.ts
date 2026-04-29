@@ -1,48 +1,137 @@
 import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import Lenis from 'lenis';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const root = document.documentElement;
 const body = document.body;
 const loader = document.querySelector<HTMLElement>('[data-loader]');
-const revealEls = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
-const heroEls = Array.from(document.querySelectorAll<HTMLElement>('[data-animate="hero"] [data-animate-item]'));
-const parallaxEls = Array.from(document.querySelectorAll<HTMLElement>('[data-parallax]'));
 const cursor = document.querySelector<HTMLElement>('[data-luxury-cursor]');
+const navShell = document.querySelector<HTMLElement>('[data-nav-shell]');
+const navToggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
+const navPanel = document.querySelector<HTMLElement>('[data-nav-panel]');
+const revealTargets = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+const heroItems = Array.from(document.querySelectorAll<HTMLElement>('[data-animate="hero"] [data-animate-item]'));
+const parallaxTargets = Array.from(document.querySelectorAll<HTMLElement>('[data-parallax]'));
+const tiltTargets = Array.from(document.querySelectorAll<HTMLElement>('[data-tilt]'));
+const toneSections = Array.from(document.querySelectorAll<HTMLElement>('[data-tone]'));
+const reviewWall = document.querySelector<HTMLElement>('[data-review-wall]');
 
-let raf = 0;
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let lenis: Lenis | null = null;
 
 const setCursor = (x: number, y: number) => {
   root.style.setProperty('--cursor-x', `${x}px`);
   root.style.setProperty('--cursor-y', `${y}px`);
 };
 
-const updateParallax = () => {
-  const viewportCenter = window.innerHeight / 2;
+const setBodyTone = (tone?: string) => {
+  if (!tone) return;
+  body.dataset.tone = tone;
+};
 
-  parallaxEls.forEach((element) => {
-    const rect = element.getBoundingClientRect();
-    const offset = (rect.top + rect.height / 2 - viewportCenter) / window.innerHeight;
-    element.style.transform = `translate3d(0, ${offset * -10}px, 0) scale(1.01)`;
+const syncNavState = (open: boolean) => {
+  body.dataset.navOpen = open ? 'true' : 'false';
+  navToggle?.setAttribute('aria-expanded', open ? 'true' : 'false');
+};
+
+const closeNav = () => syncNavState(false);
+
+const initLoader = () => {
+  if (!loader) return;
+
+  gsap.to(loader, {
+    opacity: 0,
+    duration: 0.7,
+    delay: 0.2,
+    ease: 'power2.out',
+    onComplete: () => {
+      loader.classList.add('is-hidden');
+    }
   });
 };
 
-const observeReveal = () => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.18 }
+const initHeroIntro = () => {
+  if (!heroItems.length) return;
+
+  const heroTl = gsap.timeline({ delay: 0.15 });
+
+  heroTl.fromTo(
+    heroItems,
+    { y: 22, opacity: 0, clipPath: 'inset(0 0 18% 0)' },
+    {
+      y: 0,
+      opacity: 1,
+      clipPath: 'inset(0 0 0% 0)',
+      duration: 0.9,
+      stagger: 0.08,
+      ease: 'power3.out'
+    }
   );
 
-  revealEls.forEach((element) => observer.observe(element));
+  heroTl.fromTo(
+    '.hero-visual',
+    { y: 28, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out' },
+    '<0.1'
+  );
+}
+
+const initRevealAnimations = () => {
+  revealTargets.forEach((element) => {
+    gsap.fromTo(
+      element,
+      { y: 24, opacity: 0, clipPath: 'inset(0 0 18% 0)' },
+      {
+        y: 0,
+        opacity: 1,
+        clipPath: 'inset(0 0 0% 0)',
+        duration: 0.85,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: element,
+          start: 'top 82%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+  });
+};
+
+const initParallax = () => {
+  parallaxTargets.forEach((element) => {
+    gsap.to(element, {
+      yPercent: -8,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+  });
+};
+
+const initToneObserver = () => {
+  toneSections.forEach((section) => {
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top 55%',
+      end: 'bottom 45%',
+      onEnter: () => setBodyTone(section.dataset.tone),
+      onEnterBack: () => setBodyTone(section.dataset.tone)
+    });
+  });
+
+  if (toneSections[0]) {
+    setBodyTone(toneSections[0].dataset.tone);
+  }
 };
 
 const initCursor = () => {
-  if (!cursor || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  if (!cursor || reducedMotion || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     return;
   }
 
@@ -57,52 +146,114 @@ const initCursor = () => {
   );
 };
 
-const initLoader = () => {
-  if (!loader) return;
+const initNav = () => {
+  if (!navToggle || !navPanel) return;
 
-  gsap.to(loader, {
-    opacity: 0,
-    duration: 0.75,
-    delay: 0.35,
-    ease: 'power2.out',
-    onComplete: () => {
-      loader.classList.add('is-hidden');
+  navToggle.addEventListener('click', () => {
+    const open = body.dataset.navOpen === 'true';
+    syncNavState(!open);
+  });
+
+  navPanel.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeNav);
+  });
+
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeNav();
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!body.dataset.navOpen || body.dataset.navOpen !== 'true') return;
+    const target = event.target as Node | null;
+    if (!target || !navShell || !navShell.contains(target)) {
+      closeNav();
     }
   });
 };
 
-const initHero = () => {
-  if (!heroEls.length) return;
+const initTilt = () => {
+  if (reducedMotion || !tiltTargets.length) return;
 
-  gsap.from(heroEls, {
-    y: 18,
-    opacity: 0,
-    duration: 0.82,
-    delay: 0.15,
-    stagger: 0.08,
-    ease: 'power3.out'
+  tiltTargets.forEach((element) => {
+    const reset = () => {
+      element.style.setProperty('--tilt-x', '0px');
+      element.style.setProperty('--tilt-y', '0px');
+    };
+
+    element.addEventListener('pointermove', (event) => {
+      const rect = element.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width - 0.5) * 8;
+      const y = ((event.clientY - rect.top) / rect.height - 0.5) * 8;
+      element.style.setProperty('--tilt-x', `${x}px`);
+      element.style.setProperty('--tilt-y', `${y}px`);
+    });
+
+    element.addEventListener('pointerleave', reset);
   });
 };
 
-const scheduleParallax = () => {
-  const loop = () => {
-    updateParallax();
-    raf = window.requestAnimationFrame(loop);
-  };
+const initReviewWall = () => {
+  if (!reviewWall || reducedMotion) return;
 
-  raf = window.requestAnimationFrame(loop);
+  reviewWall.addEventListener('pointermove', (event) => {
+    const rect = reviewWall.getBoundingClientRect();
+    const progress = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
+    reviewWall.style.setProperty('--review-progress', progress.toFixed(3));
+  });
 };
 
-window.addEventListener('load', () => {
-  observeReveal();
+const startSmoothScroll = () => {
+  if (reducedMotion) return;
+
+  lenis = new Lenis({
+    duration: 1.05,
+    smoothWheel: true,
+    touchMultiplier: 1.6,
+    lerp: 0.09
+  });
+
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.lagSmoothing(0);
+  gsap.ticker.add((time) => {
+    lenis?.raf(time * 1000);
+  });
+}
+
+const initScrollHooks = () => {
+  if (reducedMotion) return;
+
+  ScrollTrigger.refresh();
+};
+
+const init = () => {
+  if (body.dataset.codexReady === 'true') return;
+  body.dataset.codexReady = 'true';
+
+  syncNavState(false);
+  initNav();
   initCursor();
+  initTilt();
+  initReviewWall();
+
+  if (reducedMotion) {
+    if (toneSections[0]) {
+      setBodyTone(toneSections[0].dataset.tone);
+    }
+    loader?.classList.add('is-hidden');
+    return;
+  }
+
+  initToneObserver();
+  initRevealAnimations();
+  initParallax();
+  initHeroIntro();
   initLoader();
-  initHero();
-  scheduleParallax();
-});
+  initScrollHooks();
+  startSmoothScroll();
+};
+
+window.addEventListener('load', init);
 
 window.addEventListener('beforeunload', () => {
-  if (raf) {
-    window.cancelAnimationFrame(raf);
-  }
+  lenis?.destroy();
 });
