@@ -66,27 +66,10 @@ const products = [
               </a>
             </div>
             <div class="product-media">
-              <img
-                src={publicImage(product.image)}
-                alt={product.title}
-                loading="lazy"
-                decoding="async"
-              />
+              <img src={publicImage(product.image)} alt={product.title} loading="lazy" decoding="async" />
             </div>
           </article>
         ))}
-      </div>
-
-      <div class="product-visual product-visual--wide" data-reveal>
-        <div class="hero-frame hero-frame--wide">
-          <img
-            src={publicImage('elegance-close.jpg')}
-            alt="Деталь образа Светланы"
-            loading="lazy"
-            decoding="async"
-            data-parallax
-          />
-        </div>
       </div>
     </div>
   </div>
