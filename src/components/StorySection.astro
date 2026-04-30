@@ -1,8 +1,9 @@
 ---
 import storyInlineImage from '../../assets/photo_2026-04-30_17-28-58.jpg';
 import storyContextImage from '../../assets/photo_2026-04-30_17-29-26.jpg';
-import storyPortraitImage from '../../assets/photo_2026-04-30_17-28-41.jpg';
 import { publicImage } from '../lib/paths';
+
+const storyPortraitImage = new URL('../../assets/IMG_4912.JPG', import.meta.url);
 ---
 
 <section class="section section--story" id="about" data-tone="sand">
@@ -55,8 +56,8 @@ import { publicImage } from '../lib/paths';
         <div class="mini-gallery">
           <figure class="story-inline-image story-inline-image--gallery">
             <img
-              src={storyInlineImage.src}
-              alt="Светлана в чёрном образе"
+              src={storyPortraitImage.href}
+              alt="Светлана в черно-белом образе"
               loading="lazy"
               decoding="async"
             />
@@ -77,7 +78,7 @@ import { publicImage } from '../lib/paths';
 
         <div class="story-bottom-row">
           <div class="hero-secondary-image story-photo story-photo--portrait">
-            <img src={storyPortraitImage.src} alt="Светлана в светлом образе" loading="lazy" decoding="async" />
+            <img src={storyInlineImage.src} alt="Светлана в светлом образе" loading="lazy" decoding="async" />
             <div class="image-tag-cluster" aria-hidden="true">
               <span class="image-tag">Новая опора</span>
               <span class="image-tag">Спокойная сила</span>

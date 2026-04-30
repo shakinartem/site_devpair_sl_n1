@@ -654,6 +654,10 @@ body[data-nav-open='true'] .nav-toggle__line::after {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
+  grid-column: 1 / -1;
+  width: min(100%, 720px);
+  justify-self: end;
+  margin-top: -6px;
 }
 
 .hero-meta__item {
@@ -1550,7 +1554,8 @@ body[data-nav-open='true'] .nav-toggle__line::after {
   }
 
   .hero-visual,
-  .product-visual--wide {
+  .product-visual--wide,
+  .hero-meta {
     width: 100%;
     justify-self: stretch;
   }
@@ -1632,6 +1637,10 @@ body[data-nav-open='true'] .nav-toggle__line::after {
   .method-steps,
   .testimonial-wall {
     grid-template-columns: 1fr;
+  }
+
+  .hero-meta {
+    margin-top: 0;
   }
 
   .testimonial-wall {
