@@ -1828,6 +1828,10 @@ body[data-nav-open='true'] .nav-toggle__line::after {
     right: 14px;
   }
 
+  .section--method .panel-caption {
+    display: none;
+  }
+
   .luxury-card,
   .product-card,
   .case-card,
