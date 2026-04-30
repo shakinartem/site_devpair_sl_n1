@@ -962,6 +962,7 @@ body[data-nav-open='true'] .nav-toggle__line::after {
   font-size: 0.74rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .story-visual {
