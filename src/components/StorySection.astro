@@ -39,8 +39,8 @@ const storyPortraitImage = new URL('../../assets/IMG_4912.JPG', import.meta.url)
         </p>
       </div>
 
-      <aside class="story-visual" data-reveal>
-        <div class="hero-secondary-image hero-secondary-image--tall">
+      <aside class="story-visual story-visual--rebuilt" data-reveal>
+        <div class="hero-secondary-image hero-secondary-image--tall story-photo story-photo--feature">
           <img
             src={publicImage('grand-piano-color.jpg')}
             alt="Светлана у рояля"
@@ -53,7 +53,7 @@ const storyPortraitImage = new URL('../../assets/IMG_4912.JPG', import.meta.url)
           </div>
         </div>
 
-        <div class="mini-gallery">
+        <div class="story-mosaic">
           <figure class="story-inline-image story-inline-image--gallery">
             <img
               src={storyPortraitImage.href}
@@ -63,6 +63,7 @@ const storyPortraitImage = new URL('../../assets/IMG_4912.JPG', import.meta.url)
             />
             <figcaption>Closer to the work, closer to the text</figcaption>
           </figure>
+
           <div class="hero-secondary-image hero-secondary-image--square story-photo story-photo--context">
             <img
               src={storyContextImage.src}
@@ -77,7 +78,7 @@ const storyPortraitImage = new URL('../../assets/IMG_4912.JPG', import.meta.url)
         </div>
 
         <div class="story-bottom-row">
-          <div class="hero-secondary-image story-photo story-photo--portrait">
+          <div class="hero-secondary-image story-photo story-photo--portrait story-photo--compact">
             <img src={storyInlineImage.src} alt="Светлана в светлом образе" loading="lazy" decoding="async" />
             <div class="image-tag-cluster" aria-hidden="true">
               <span class="image-tag">Новая опора</span>

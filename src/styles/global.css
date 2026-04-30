@@ -654,10 +654,10 @@ body[data-nav-open='true'] .nav-toggle__line::after {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
-  grid-column: 1 / -1;
-  width: min(100%, 720px);
-  justify-self: end;
-  margin-top: -6px;
+  grid-column: 1;
+  width: min(100%, 660px);
+  justify-self: start;
+  margin-top: 6px;
 }
 
 .hero-meta__item {
@@ -686,9 +686,9 @@ body[data-nav-open='true'] .nav-toggle__line::after {
 .hero-visual {
   position: relative;
   justify-self: end;
-  width: min(100%, 500px);
+  width: min(100%, 440px);
   display: grid;
-  gap: 14px;
+  gap: 12px;
   align-self: start;
   padding-top: 8px;
 }
@@ -723,7 +723,7 @@ body[data-nav-open='true'] .nav-toggle__line::after {
 }
 
 .hero-frame--hero {
-  aspect-ratio: 5 / 6;
+  aspect-ratio: 4.5 / 5.6;
 }
 
 .hero-frame img,
@@ -761,7 +761,7 @@ body[data-nav-open='true'] .nav-toggle__line::after {
 
 .hero-strip__image img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 0.9;
   object-fit: cover;
 }
 
@@ -927,9 +927,9 @@ body[data-nav-open='true'] .nav-toggle__line::after {
 .story-inline-image {
   display: grid;
   gap: 8px;
-  max-width: 300px;
+  max-width: 260px;
   margin: 6px 0 2px;
-  padding: 10px;
+  padding: 9px;
   border-radius: 22px;
   border: 1px solid rgba(31, 26, 23, 0.1);
   background: rgba(250, 247, 241, 0.72);
@@ -963,6 +963,11 @@ body[data-nav-open='true'] .nav-toggle__line::after {
   align-content: start;
 }
 
+.story-visual--rebuilt {
+  width: min(100%, 520px);
+  justify-self: end;
+}
+
 .story-photo img {
   object-position: center top;
 }
@@ -972,7 +977,7 @@ body[data-nav-open='true'] .nav-toggle__line::after {
 }
 
 .hero-secondary-image--tall {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 4.7;
 }
 
 .hero-secondary-image--square {
@@ -1012,19 +1017,35 @@ body[data-nav-open='true'] .nav-toggle__line::after {
   gap: 14px;
 }
 
+.story-mosaic {
+  display: grid;
+  grid-template-columns: 0.88fr 0.72fr;
+  gap: 12px;
+  align-items: start;
+}
+
 .mini-gallery .hero-secondary-image {
   aspect-ratio: 1 / 1;
 }
 
 .story-bottom-row {
   display: grid;
-  gap: 14px;
+  gap: 12px;
   justify-items: end;
 }
 
 .story-bottom-row .hero-secondary-image {
-  width: min(100%, 360px);
+  width: min(100%, 300px);
   aspect-ratio: 4 / 5;
+}
+
+.story-photo--feature {
+  width: min(100%, 410px);
+  justify-self: end;
+}
+
+.story-photo--compact {
+  border-radius: 26px;
 }
 
 .method-copy {
@@ -1130,12 +1151,12 @@ body[data-nav-open='true'] .nav-toggle__line::after {
 
 .product-media img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
 }
 
 .product-media--portrait img {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 4.8;
   object-position: center 18%;
 }
 
@@ -1207,7 +1228,7 @@ body[data-nav-open='true'] .nav-toggle__line::after {
 }
 
 .testimonial-visual {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 4.6;
 }
 
 .testimonial-visual__note {
@@ -1282,7 +1303,7 @@ body[data-nav-open='true'] .nav-toggle__line::after {
 }
 
 .format-visual--compact {
-  max-width: 560px;
+  max-width: 460px;
   justify-self: end;
   align-self: center;
 }
@@ -1555,7 +1576,8 @@ body[data-nav-open='true'] .nav-toggle__line::after {
 
   .hero-visual,
   .product-visual--wide,
-  .hero-meta {
+  .hero-meta,
+  .story-visual--rebuilt {
     width: 100%;
     justify-self: stretch;
   }
@@ -1643,6 +1665,11 @@ body[data-nav-open='true'] .nav-toggle__line::after {
     margin-top: 0;
   }
 
+  .story-photo--feature {
+    width: 100%;
+    justify-self: stretch;
+  }
+
   .testimonial-wall {
     grid-template-columns: 1fr;
   }
@@ -1688,6 +1715,7 @@ body[data-nav-open='true'] .nav-toggle__line::after {
   }
 
   .mini-gallery,
+  .story-mosaic,
   .story-bottom-row .hero-secondary-image {
     max-width: none;
     width: 100%;
@@ -1695,6 +1723,10 @@ body[data-nav-open='true'] .nav-toggle__line::after {
 
   .story-bottom-row {
     justify-items: stretch;
+  }
+
+  .story-mosaic {
+    grid-template-columns: 1fr 1fr;
   }
 
   .hero-meta,
@@ -1761,6 +1793,10 @@ body[data-nav-open='true'] .nav-toggle__line::after {
   }
 
   .mini-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .story-mosaic {
     grid-template-columns: 1fr;
   }
 
