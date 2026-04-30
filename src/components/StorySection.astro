@@ -19,8 +19,8 @@ const storyPortraitImage = new URL('../../assets/IMG_4912.JPG', import.meta.url)
       </p>
     </div>
 
-    <div class="story-grid">
-      <div class="story-copy" data-reveal>
+    <div class="story-grid story-grid--rebuilt">
+      <div class="story-copy story-copy--rebuilt" data-reveal>
         <p class="story-quote">
           Тринадцать лет карьеры, которой можно было гордиться. А потом наступил момент, когда у меня было всё, кроме
           ощущения, что это действительно моя жизнь.
@@ -29,31 +29,33 @@ const storyPortraitImage = new URL('../../assets/IMG_4912.JPG', import.meta.url)
           Я ушла из должности, которую строила полтора десятилетия. Первый год после этого был самым некомфортным: без
           маршрута, без привычной роли, без ответа на вопрос, кто я теперь.
         </p>
-        <p>
-          Именно там стало ясно: должность, сцена и высокая планка могут быть не только достижением, но и укрытием.
-          Когда внешняя конструкция снимается, часто впервые слышно самое важное.
-        </p>
-        <p>
-          Сейчас я работаю с предпринимателями, руководителями и экспертами, которые оказались в похожей точке. Я не
-          объясняю им жизнь со стороны. Я знаю, как она звучит изнутри.
-        </p>
+        <div class="story-copy__pair">
+          <p>
+            Именно там стало ясно: должность, сцена и высокая планка могут быть не только достижением, но и укрытием.
+            Когда внешняя конструкция снимается, часто впервые слышно самое важное.
+          </p>
+          <p>
+            Сейчас я работаю с предпринимателями, руководителями и экспертами, которые оказались в похожей точке. Я не
+            объясняю им жизнь со стороны. Я знаю, как она звучит изнутри.
+          </p>
+        </div>
       </div>
 
       <aside class="story-visual story-visual--rebuilt" data-reveal>
-        <div class="hero-secondary-image hero-secondary-image--tall story-photo story-photo--feature">
-          <img
-            src={publicImage('grand-piano-color.jpg')}
-            alt="Светлана у рояля"
-            loading="lazy"
-            decoding="async"
-          />
-          <div class="image-tag-cluster" aria-hidden="true">
-            <span class="image-tag">Ясность</span>
-            <span class="image-tag">Присутствие</span>
+        <div class="story-mosaic story-mosaic--top">
+          <div class="hero-secondary-image story-photo story-photo--feature">
+            <img
+              src={publicImage('grand-piano-color.jpg')}
+              alt="Светлана у рояля"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="image-tag-cluster" aria-hidden="true">
+              <span class="image-tag">Ясность</span>
+              <span class="image-tag">Присутствие</span>
+            </div>
           </div>
-        </div>
 
-        <div class="story-mosaic">
           <figure class="story-inline-image story-inline-image--gallery">
             <img
               src={storyPortraitImage.href}
@@ -63,7 +65,9 @@ const storyPortraitImage = new URL('../../assets/IMG_4912.JPG', import.meta.url)
             />
             <figcaption>Closer to the work, closer to the text</figcaption>
           </figure>
+        </div>
 
+        <div class="story-mosaic story-mosaic--bottom">
           <div class="hero-secondary-image hero-secondary-image--square story-photo story-photo--context">
             <img
               src={storyContextImage.src}
@@ -75,9 +79,7 @@ const storyPortraitImage = new URL('../../assets/IMG_4912.JPG', import.meta.url)
               <span class="image-tag">Контекст</span>
             </div>
           </div>
-        </div>
 
-        <div class="story-bottom-row">
           <div class="hero-secondary-image story-photo story-photo--portrait story-photo--compact">
             <img src={storyInlineImage.src} alt="Светлана в светлом образе" loading="lazy" decoding="async" />
             <div class="image-tag-cluster" aria-hidden="true">
