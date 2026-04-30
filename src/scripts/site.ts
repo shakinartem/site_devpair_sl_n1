@@ -135,15 +135,29 @@ const initCursor = () => {
     return;
   }
 
-  body.dataset.cursorActive = 'true';
+  body.dataset.cursorActive = 'false';
+
+  const showCursor = () => {
+    body.dataset.cursorActive = 'true';
+  };
+
+  const hideCursor = () => {
+    body.dataset.cursorActive = 'false';
+  };
 
   window.addEventListener(
     'pointermove',
     (event) => {
       setCursor(event.clientX, event.clientY);
+      showCursor();
     },
     { passive: true }
   );
+
+  window.addEventListener('pointerdown', showCursor, { passive: true });
+  window.addEventListener('pointerenter', showCursor, { passive: true });
+  window.addEventListener('pointerleave', hideCursor, { passive: true });
+  window.addEventListener('blur', hideCursor);
 };
 
 const initNav = () => {
