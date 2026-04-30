@@ -1,4 +1,7 @@
 ---
+import storyInlineImage from '../../assets/photo_2026-04-30_17-28-58.jpg';
+import storyContextImage from '../../assets/photo_2026-04-30_17-29-26.jpg';
+import storyPortraitImage from '../../assets/photo_2026-04-30_17-28-41.jpg';
 import { publicImage } from '../lib/paths';
 ---
 
@@ -23,16 +26,16 @@ import { publicImage } from '../lib/paths';
         </p>
         <figure class="story-inline-image">
           <img
-            src={publicImage('elegance-close.jpg')}
-            alt="Деталь образа Светланы"
+            src={storyInlineImage.src}
+            alt="Светлана в чёрном образе"
             loading="lazy"
             decoding="async"
           />
           <figcaption>Closer to the work, closer to the text</figcaption>
         </figure>
         <p>
-          Я ушла из должности, которую строила полтора десятилетия. Первый год после этого был самым некомфортным:
-          без маршрута, без привычной роли, без ответа на вопрос, кто я теперь.
+          Я ушла из должности, которую строила полтора десятилетия. Первый год после этого был самым некомфортным: без
+          маршрута, без привычной роли, без ответа на вопрос, кто я теперь.
         </p>
         <p>
           Именно там стало ясно: должность, сцена и высокая планка могут быть не только достижением, но и укрытием.
@@ -47,33 +50,38 @@ import { publicImage } from '../lib/paths';
       <aside class="story-visual" data-reveal>
         <div class="hero-secondary-image hero-secondary-image--tall">
           <img
-            src={publicImage('lavender-balcony.jpg')}
-            alt="Светлана Лагутова в кресле, глубокий профиль"
+            src={publicImage('grand-piano-color.jpg')}
+            alt="Светлана у рояля"
             loading="lazy"
             decoding="async"
           />
+          <div class="image-tag-cluster" aria-hidden="true">
+            <span class="image-tag">Ясность</span>
+            <span class="image-tag">Присутствие</span>
+          </div>
         </div>
-        <div class="mini-gallery">
-          <div class="hero-secondary-image">
+
+        <div class="mini-gallery mini-gallery--single">
+          <div class="hero-secondary-image hero-secondary-image--square story-photo story-photo--context">
             <img
-              src={publicImage('lavender-balcony.jpg')}
-              alt="Светлана на балконе"
+              src={storyContextImage.src}
+              alt="Светлана в зале у сцены"
               loading="lazy"
               decoding="async"
             />
-          </div>
-          <div class="hero-secondary-image">
-            <img
-              src={publicImage('group-photo.jpg')}
-              alt="Групповое фото Светланы с коллегами"
-              loading="lazy"
-              decoding="async"
-            />
+            <div class="image-tag-cluster" aria-hidden="true">
+              <span class="image-tag">Контекст</span>
+            </div>
           </div>
         </div>
+
         <div class="story-bottom-row">
-          <div class="hero-secondary-image">
-            <img src={publicImage('grand-piano-color.jpg')} alt="Дополнительный кадр" loading="lazy" decoding="async" />
+          <div class="hero-secondary-image story-photo story-photo--portrait">
+            <img src={storyPortraitImage.src} alt="Светлана в светлом образе" loading="lazy" decoding="async" />
+            <div class="image-tag-cluster" aria-hidden="true">
+              <span class="image-tag">Новая опора</span>
+              <span class="image-tag">Спокойная сила</span>
+            </div>
           </div>
         </div>
       </aside>

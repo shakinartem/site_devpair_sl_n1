@@ -1,4 +1,5 @@
 ---
+import entryStageImage from '../../assets/photo_2026-04-30_17-29-19.jpg';
 import { publicImage } from '../lib/paths';
 
 const telegramUrl = import.meta.env.PUBLIC_TELEGRAM_URL ?? 'https://t.me/';
@@ -11,7 +12,9 @@ const products = [
     text: 'Для тех, кто понимает: снаружи всё работает, но внутри что-то звучит не так. За встречу мы находим точку входа, снимаем лишний шум и определяем, с чего действительно стоит начинать.',
     bullets: ['Комфортное знакомство', 'Диагностика состояния', 'Карта следующего шага'],
     action: 'Записаться',
-    image: 'lavender-balcony.jpg'
+    image: entryStageImage.src,
+    imageAlt: 'Светлана у сцены и рояля',
+    mediaClass: 'product-media--portrait'
   },
   {
     title: 'Разовая сессия',
@@ -20,7 +23,8 @@ const products = [
     text: 'Для ясного запроса и глубокой работы в одной встрече. Это формат, где можно быстро увидеть, где застряло решение, и аккуратно развернуть его в сторону движения.',
     bullets: ['Индивидуальные инструменты', 'Разбор сопротивлений', 'Практическая ясность'],
     action: 'Выбрать формат',
-    image: 'elegance-close.jpg'
+    image: publicImage('elegance-close.jpg'),
+    imageAlt: 'Чёрно-белый портрет Светланы'
   },
   {
     title: 'Сопровождение «Архитектура пути»',
@@ -30,7 +34,8 @@ const products = [
     bullets: ['4 сессии по 60 минут', 'Поддержка в мессенджере', 'Новая система движения'],
     action: 'Записаться на диагностику',
     featured: true,
-    image: 'group-photo.jpg'
+    image: publicImage('group-photo.jpg'),
+    imageAlt: 'Светлана с участниками группы'
   }
 ];
 ---
@@ -65,8 +70,8 @@ const products = [
                 Telegram
               </a>
             </div>
-            <div class="product-media">
-              <img src={publicImage(product.image)} alt={product.title} loading="lazy" decoding="async" />
+            <div class:list={['product-media', product.mediaClass]}>
+              <img src={product.image} alt={product.imageAlt ?? product.title} loading="lazy" decoding="async" />
             </div>
           </article>
         ))}
