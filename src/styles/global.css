@@ -1674,8 +1674,10 @@ body[data-nav-open='true'] .nav-toggle__line::after {
     top: calc(100% + 12px);
     left: 0;
     right: 0;
+    width: 100%;
     display: grid;
     gap: 18px;
+    justify-items: center;
     padding: 20px;
     border: 1px solid rgba(31, 26, 23, 0.12);
     border-radius: 28px;
