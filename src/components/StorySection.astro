@@ -24,15 +24,6 @@ import { publicImage } from '../lib/paths';
           Тринадцать лет карьеры, которой можно было гордиться. А потом наступил момент, когда у меня было всё, кроме
           ощущения, что это действительно моя жизнь.
         </p>
-        <figure class="story-inline-image">
-          <img
-            src={storyInlineImage.src}
-            alt="Светлана в чёрном образе"
-            loading="lazy"
-            decoding="async"
-          />
-          <figcaption>Closer to the work, closer to the text</figcaption>
-        </figure>
         <p>
           Я ушла из должности, которую строила полтора десятилетия. Первый год после этого был самым некомфортным: без
           маршрута, без привычной роли, без ответа на вопрос, кто я теперь.
@@ -61,7 +52,16 @@ import { publicImage } from '../lib/paths';
           </div>
         </div>
 
-        <div class="mini-gallery mini-gallery--single">
+        <div class="mini-gallery">
+          <figure class="story-inline-image story-inline-image--gallery">
+            <img
+              src={storyInlineImage.src}
+              alt="Светлана в чёрном образе"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Closer to the work, closer to the text</figcaption>
+          </figure>
           <div class="hero-secondary-image hero-secondary-image--square story-photo story-photo--context">
             <img
               src={storyContextImage.src}
