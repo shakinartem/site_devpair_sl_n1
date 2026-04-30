@@ -965,6 +965,10 @@ body[data-nav-open='true'] .nav-toggle__line::after {
   text-align: center;
 }
 
+.story-inline-image figcaption span {
+  display: block;
+}
+
 .story-visual {
   display: grid;
   gap: 14px;
