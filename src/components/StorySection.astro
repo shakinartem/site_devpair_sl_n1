@@ -2,8 +2,6 @@
 import storyInlineImage from '../../assets/photo_2026-04-30_17-28-58.jpg';
 import storyContextImage from '../../assets/photo_2026-04-30_17-29-26.jpg';
 import { publicImage } from '../lib/paths';
-
-const storyPortraitImage = new URL('../../assets/IMG_4912.JPG', import.meta.url);
 ---
 
 <section class="section section--story" id="about" data-tone="sand">
@@ -58,7 +56,7 @@ const storyPortraitImage = new URL('../../assets/IMG_4912.JPG', import.meta.url)
 
           <figure class="story-inline-image story-inline-image--gallery">
             <img
-              src={storyPortraitImage.href}
+              src={publicImage('story-portrait.jpg')}
               alt="Светлана в черно-белом образе"
               loading="lazy"
               decoding="async"
