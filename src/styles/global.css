@@ -1180,8 +1180,9 @@ body[data-nav-open='true'] .nav-toggle__line::after {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 0.88fr) minmax(360px, 1.28fr);
   gap: 18px;
+  align-items: start;
 }
 
 .product-card {
