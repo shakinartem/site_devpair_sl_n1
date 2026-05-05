@@ -1186,11 +1186,17 @@ body[data-nav-open='true'] .nav-toggle__line::after {
 }
 
 .product-card {
+  position: relative;
   display: grid;
   align-content: start;
   gap: 14px;
   padding: 22px;
   border-radius: 28px;
+  transition:
+    transform 260ms var(--ease-out),
+    border-color 260ms var(--ease-out),
+    box-shadow 260ms var(--ease-out),
+    background 260ms var(--ease-out);
 }
 
 .product-card__body {
@@ -1202,6 +1208,34 @@ body[data-nav-open='true'] .nav-toggle__line::after {
 .product-section {
   display: grid;
   gap: 10px;
+}
+
+.product-details {
+  display: grid;
+  gap: 14px;
+}
+
+.product-info-block p,
+.product-info-block .luxury-list {
+  margin: 0;
+}
+
+.product-card:not(.product-card--featured) .product-details {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.product-card:not(.product-card--featured) .product-info-block {
+  min-height: 100%;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.34);
+  border: 1px solid rgba(184, 148, 102, 0.18);
+}
+
+.product-card:not(.product-card--featured) .product-info-block--result,
+.product-card:not(.product-card--featured) .product-info-block--terms {
+  background: rgba(250, 247, 241, 0.56);
 }
 
 .product-section h4 {
@@ -1226,6 +1260,7 @@ body[data-nav-open='true'] .nav-toggle__line::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 520ms var(--ease-out);
 }
 
 .product-media--stage img {
@@ -1250,6 +1285,13 @@ body[data-nav-open='true'] .nav-toggle__line::after {
   box-shadow: 0 30px 96px rgba(139, 107, 70, 0.16);
 }
 
+.product-card--featured:hover,
+.product-card--featured:focus-within {
+  transform: translateY(-5px);
+  border-color: rgba(184, 148, 102, 0.44);
+  box-shadow: 0 38px 110px rgba(139, 107, 70, 0.24);
+}
+
 .product-card:not(.product-card--featured) .product-media {
   display: none;
 }
@@ -1261,6 +1303,11 @@ body[data-nav-open='true'] .nav-toggle__line::after {
 
 .product-card--featured .product-card__body {
   align-self: center;
+}
+
+.product-card--featured:hover .product-media img,
+.product-card--featured:focus-within .product-media img {
+  transform: scale(1.035);
 }
 
 .product-price {
@@ -1884,6 +1931,10 @@ body[data-nav-open='true'] .nav-toggle__line::after {
 
   .product-media {
     aspect-ratio: 4 / 4.75;
+  }
+
+  .product-card:not(.product-card--featured) .product-details {
+    grid-template-columns: 1fr;
   }
 
   .product-media--stage img {
