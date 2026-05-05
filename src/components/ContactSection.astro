@@ -1,7 +1,6 @@
 ---
 import { sitePath } from '../lib/paths';
 
-const telegramUrl = import.meta.env.PUBLIC_TELEGRAM_URL ?? 'https://t.me/';
 const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT ?? 'https://formspree.io/f/YOUR_FORM_ID';
 ---
 
@@ -51,10 +50,6 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT ?? 'https://
           После заявки я свяжусь с вами в течение 24 часов, чтобы согласовать формат, время встречи и детали оплаты.
         </p>
       </form>
-
-      <a class="button button--solid contact-telegram" href={telegramUrl} target="_blank" rel="noreferrer">
-        Написать в Telegram
-      </a>
     </div>
   </div>
 </section>

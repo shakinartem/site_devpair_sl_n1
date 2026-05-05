@@ -1487,10 +1487,6 @@ body[data-nav-open='true'] .nav-toggle__line::after {
   box-sizing: border-box;
 }
 
-.contact-telegram {
-  width: fit-content;
-}
-
 .site-footer {
   padding: 34px 0 54px;
   color: var(--text-soft);
