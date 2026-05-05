@@ -89,36 +89,38 @@ const products = [
       <div class="products-grid" data-reveal>
         {products.map((product) => (
           <article class:list={['product-card', product.featured ? 'product-card--featured' : '']}>
-            {product.eyebrow && <span class="label-chip">{product.eyebrow}</span>}
-            <h3>{product.title}</h3>
-            <div class="product-price">
-              <span>{product.duration}</span>
-              <span>{product.price}</span>
-            </div>
-            <p>{product.text}</p>
-            {product.sections.map((section) => (
-              <div class="product-section">
-                <h4>{section.title}</h4>
-                <ul class="luxury-list">
-                  {section.bullets.map((bullet) => <li>{bullet}</li>)}
-                </ul>
-              </div>
-            ))}
-            {product.result && <p><strong>{product.result}</strong></p>}
-            <ul class="luxury-list product-terms">
-              <li>Гарантия конфиденциальности работы</li>
-              <li>Время бронируется после оплаты</li>
-              <li>Оплата с российских и зарубежных карт</li>
-              <li>Чек высылается на электронную почту</li>
-            </ul>
-            {product.note && <p class="product-note"><strong>Важно:</strong> {product.note}</p>}
-            <div class="cta-row">
-              <a class={product.featured ? 'button button--solid' : 'button button--ghost'} href="#contact">
-                {product.action}
-              </a>
-            </div>
             <div class:list={['product-media', product.mediaClass]}>
               <img src={product.image} alt={product.imageAlt ?? product.title} loading="lazy" decoding="async" />
+            </div>
+            <div class="product-card__body">
+              {product.eyebrow && <span class="label-chip">{product.eyebrow}</span>}
+              <h3>{product.title}</h3>
+              <div class="product-price">
+                <span>{product.duration}</span>
+                <span>{product.price}</span>
+              </div>
+              <p>{product.text}</p>
+              {product.sections.map((section) => (
+                <div class="product-section">
+                  <h4>{section.title}</h4>
+                  <ul class="luxury-list">
+                    {section.bullets.map((bullet) => <li>{bullet}</li>)}
+                  </ul>
+                </div>
+              ))}
+              {product.result && <p><strong>{product.result}</strong></p>}
+              <ul class="luxury-list product-terms">
+                <li>Гарантия конфиденциальности работы</li>
+                <li>Время бронируется после оплаты</li>
+                <li>Оплата с российских и зарубежных карт</li>
+                <li>Чек высылается на электронную почту</li>
+              </ul>
+              {product.note && <p class="product-note"><strong>Важно:</strong> {product.note}</p>}
+              <div class="cta-row">
+                <a class={product.featured ? 'button button--solid' : 'button button--ghost'} href="#contact">
+                  {product.action}
+                </a>
+              </div>
             </div>
           </article>
         ))}
