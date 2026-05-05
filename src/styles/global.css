@@ -1192,6 +1192,19 @@ body[data-nav-open='true'] .nav-toggle__line::after {
   border-radius: 28px;
 }
 
+.product-section {
+  display: grid;
+  gap: 10px;
+}
+
+.product-section h4 {
+  margin: 0;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--bronze);
+}
+
 .product-media {
   overflow: hidden;
   position: relative;
@@ -1223,13 +1236,31 @@ body[data-nav-open='true'] .nav-toggle__line::after {
 .product-card--featured {
   background: linear-gradient(180deg, rgba(232, 215, 192, 0.3), rgba(250, 247, 241, 0.95));
   border-color: rgba(184, 148, 102, 0.26);
+  box-shadow: 0 30px 96px rgba(139, 107, 70, 0.16);
 }
 
 .product-price {
+  display: grid;
+  gap: 4px;
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: var(--bronze);
+}
+
+.product-price span:last-child {
+  color: var(--text);
+}
+
+.product-terms {
+  padding-top: 2px;
+}
+
+.product-note {
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.34);
+  border: 1px solid var(--line);
 }
 
 .product-visual--wide {
@@ -1444,6 +1475,19 @@ body[data-nav-open='true'] .nav-toggle__line::after {
   display: grid;
   gap: 14px;
   align-content: start;
+}
+
+.section--contact .contact-grid {
+  grid-template-columns: 1fr;
+}
+
+.section--contact .contact-form {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-telegram {
+  width: fit-content;
 }
 
 .site-footer {

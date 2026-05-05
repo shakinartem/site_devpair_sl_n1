@@ -9,12 +9,10 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT ?? 'https://
   <div class="site-shell">
     <div class="section-heading section-heading--split" data-reveal>
       <div>
-        <p class="eyebrow">Контакт</p>
         <h2>Напишите Светлане</h2>
       </div>
       <p class="section-description">
-        Первый шаг - не покупка. Это разговор. Бесплатная диагностическая встреча нужна, чтобы спокойно понять,
-        подходим ли мы друг другу и что сейчас действительно важно.
+        Ниже заполните форму, чтобы связаться со мной.
       </p>
     </div>
 
@@ -50,23 +48,13 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT ?? 'https://
         </label>
         <button class="button button--solid" type="submit">Написать Светлане</button>
         <p class="section-description">
-          После заявки я свяжусь с вами в течение 24 часов. Диагностическая встреча длится 30 минут и проходит
-          бесплатно.
+          После заявки я свяжусь с вами в течение 24 часов, чтобы согласовать формат, время встречи и детали оплаты.
         </p>
       </form>
 
-      <div class="luxury-card contact-card" data-reveal>
-        <span class="label-chip">Альтернатива</span>
-        <h3 class="luxury-card__title">Или напишите напрямую в Telegram</h3>
-        <p>
-          Для части людей прямой канал связи ощущается естественнее, чем форма. Это нормальный путь входа в private
-          consultation без лишнего трения.
-        </p>
-        <div class="cta-row">
-          <a class="button button--solid" href={telegramUrl} target="_blank" rel="noreferrer">Открыть Telegram</a>
-          <a class="button button--ghost" href="#home">Наверх</a>
-        </div>
-      </div>
+      <a class="button button--solid contact-telegram" href={telegramUrl} target="_blank" rel="noreferrer">
+        Написать в Telegram
+      </a>
     </div>
   </div>
 </section>

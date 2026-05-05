@@ -3,7 +3,7 @@ import { publicImage } from '../lib/paths';
 
 const testimonials = [
   {
-    context: 'Участница клуба «Симфония», 3 месяца',
+    context: 'Участница сессии',
     text: '«Я впервые за долгое время перестала жить из внутреннего напряжения. Появилась тишина, в которой не страшно оставаться.»'
   },
   {
@@ -28,10 +28,6 @@ const testimonials = [
         <p class="eyebrow">Отзывы</p>
         <h2>Что говорят люди после работы, когда шум отступает и появляется форма</h2>
       </div>
-      <p class="section-description">
-        Вместо обычных карточек здесь editorial-стена отзывов: контекст, голос клиента и ощущение результата. Блок
-        можно читать как кейсы доверия.
-      </p>
     </div>
 
     <div class="testimonials-layout">
@@ -43,10 +39,6 @@ const testimonials = [
           decoding="async"
           data-parallax
         />
-        <div class="testimonial-visual__note">
-          <span>Client voice</span>
-          <strong>calm, precise, premium</strong>
-        </div>
       </div>
 
       <div class="testimonial-wall" data-review-wall>
@@ -56,7 +48,6 @@ const testimonials = [
             <blockquote>{item.text}</blockquote>
             <div class="testimonial-card__foot">
               <span class="testimonial-card__index">0{index + 1}</span>
-              <span>Verified client feedback</span>
             </div>
           </article>
         ))}
