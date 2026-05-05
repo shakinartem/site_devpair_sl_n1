@@ -65,7 +65,6 @@ const products = [
       }
     ],
     result: 'За месяц вы получаете ясность в направлении, понимание собственных опор и снятые внутренние блоки. Без самобичевания, без насилия над собой, без очередных «надо». Только настройка.',
-    note: 'Я работаю с 3-4 людьми одновременно в этом формате. Это не маркетинговый приём - это условие глубины работы.',
     action: 'Записаться на диагностику',
     featured: true,
     image: publicImage('group-photo.jpg'),
@@ -80,8 +79,7 @@ const products = [
     <div class="section-heading" data-reveal>
       <h2>Три точки входа для разного уровня готовности</h2>
       <p class="section-description">
-        Спокойная лестница выбора: от первой встречи до глубокой перестройки жизни. Самый сильный формат выделен
-        визуально и смыслово.
+        Спокойная лестница выбора: от первой встречи до глубокой перестройки жизни.
       </p>
     </div>
 
@@ -115,7 +113,6 @@ const products = [
                 <li>Оплата с российских и зарубежных карт</li>
                 <li>Чек высылается на электронную почту</li>
               </ul>
-              {product.note && <p class="product-note"><strong>Важно:</strong> {product.note}</p>}
               <div class="cta-row">
                 <a class={product.featured ? 'button button--solid' : 'button button--ghost'} href="#contact">
                   {product.action}
